@@ -4,13 +4,20 @@
 	<%@ include file="/WEB-INF/include/_dtd.jsp"%>
 	참고: layout.jsp
 
-2. _header.jsp, _subMenuBar.jsp 의 링크를 맞춥니다.
+2. include 파일안의 "../../_resource/" 상대 경로를 "/_resource/" 절대 경로로 바꾸어야 합니다.
 
-3. 콘텐츠 페이지를 .jsp 로 바꾼 후 이미지가 나오지 않는다면, 전체 페이지 검색하여"../../_resource/" 상대 경로를 "/_resource/" 변경해야 합니다.
+3. _header.jsp, _subMenuBar.jsp 의 링크를 맞춥니다.
 
-4. 대메뉴가 변경되면 그게 맞게 #wrap에 .sub01~.sub04 를 바꿔 주셔야 합니다. (lnb 동작)
+4. 콘텐츠 페이지를 .jsp 로 바꾼 후 이미지가 나오지 않는다면, 전체 페이지 검색하여"../../_resource/" 상대 경로를 "/_resource/" 변경해야 합니다.
 
-5. 복사할 영역은 <div id="container"> 을 포함한 모든 코드 입니다.
+5. 대메뉴가 변경되면 그게 맞게 #wrap에 .sub01~.sub04 를 바꿔 주셔야 합니다. (lnb 동작)
+
+6. 복사할 영역은 <div id="container"> 을 포함한 모든 코드 입니다.
+
+7. 모든 스크립트를 코드 제일 하단부분으로 내렸습니다.
+<%@ include file="/WEB-INF/include/_scripts.jsp"%>
+문제 있을시 include 제거 하시고 _dtd 안에 넣으시면 됩니다.
+
  -->
 
 <%@ include file="/WEB-INF/include/_dtd.jsp"%>
