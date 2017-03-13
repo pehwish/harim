@@ -30,14 +30,14 @@ gulp.task('sass:watch', function(){
 
 /* sprite */
 gulp.task('sprite', function(){
-	var spriteData = gulp.src('./images/sp_img/*.png')
+	var spriteData = gulp.src('./images/sp_img/*/*.png')
 		.pipe(spritesmith({
 			imgName: 'sprite_all.png',
 			padding: 4,
 			cssName: 'sprite_all.scss',
-			imgPath: '../images/sprite/sprite_all.png'
+			imgPath: '../images/sprites/sprite_all.png'
 		}));
-	spriteData.img.pipe(gulp.dest('./images/sprite'));
+	spriteData.img.pipe(gulp.dest('./images/sprites'));
 	spriteData.css.pipe(gulp.dest('./scss'));
 });
 gulp.task('sprite:watch', function(){

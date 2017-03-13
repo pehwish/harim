@@ -1,27 +1,67 @@
 @charset "utf-8";
 
+$mainColor:#f26155; /* 주황, 버튼 */
+$baseFontColor:#717171; /* lnb, tableText */
+$subFontColor1:#212121;  /* table a */
+$subFontColor2:#313131; /* 콘텐츠 내용 */
 
-$baseBgColor : #2b3b4e;
-$baseColor : #e15525;
-$formBaseHeight : 22px;
+$baseBgColor:#f3f4f6; /* table bg */
+$subBgColor1:#b9a78d; /* 버튼 똥*/
+$subBgColor2:#4f4d54; /* 버튼 회색*/
+$subBgColor3:$mainColor; /* 버튼active */
+
+$baseBorderColor:$mainColor; /* table top */
+$subBorderColor:#e1e1e1; /* table, select, paging */
+$subBorderColor2:#dfdfdf;
+$formBaseHeight :41px;
+
+/*
+ * Nanum Gothic (Korean) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/NanumGothic-Regular.eot);
+  src: url(../fonts/NanumGothic-Regular.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NanumGothic-Regular.woff2) format('woff2'),
+       url(../fonts/NanumGothic-Regular.woff) format('woff'),
+       url(../fonts/NanumGothic-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/NanumGothic-Bold.eot);
+  src: url(../fonts/NanumGothic-Bold.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NanumGothic-Bold.woff2) format('woff2'),
+       url(../fonts/NanumGothic-Bold.woff) format('woff'),
+       url(../fonts/NanumGothic-Bold.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/NanumGothic-ExtraBold.eot);
+  src: url(../fonts/NanumGothic-ExtraBold.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/NanumGothic-ExtraBold.woff2) format('woff2'),
+       url(../fonts/NanumGothic-ExtraBold.woff) format('woff'),
+       url(../fonts/NanumGothic-ExtraBold.ttf) format('truetype');
+}
 
 *{
 	box-sizing:border-box;
-	line-height:1.4;
 }
 
 html,
 body{
-	font-family: 'Noto Sans KR', sans-serif;
+	font-family: "Nanum Gothic", "나눔고딕", sans-serif;
 	height:100%;
+	line-height:1.7;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6, strong{
 	font-weight:bold !important;
-}
-/* sprite img */
-.icon{
-	display:inline-block;
 }
 
 /* IR */
@@ -43,7 +83,18 @@ caption{
 	overflow: hidden;
 }
 
-/* sursor */
+/* node.js sprite img */
+.sp,
+.icon{
+	display:inline-block;
+	text-indent:-9999px;
+	overflow: hidden;
+	line-height: 0;
+	white-space: nowrap;
+	text-align: left !important;
+}
+
+/* cursor */
 button{
 	cursor:pointer;
 }
@@ -53,10 +104,10 @@ a{
 }
 
 /* float */
-.float_left{
+.floatLeft{
 	float:left;
 }
-.float_right{
+.floatRight{
 	float:right;
 }
 .clearfix:after{
@@ -68,7 +119,7 @@ a{
 
 /* text 생략 */
 .ellipsis{
-	width: 100%;
+	max-width: 100%;
 	display: inline-block;
 	white-space: nowrap;
 	overflow: hidden;
@@ -110,6 +161,7 @@ a{
 select,
 input{
 	height:$formBaseHeight;
+	vertical-align:middle;
 }
 select{
 	padding:0;
@@ -161,10 +213,10 @@ $directionCount : length($direction);
 	}
 }
 
-/* 너비 10px 부터 500px까지 */
-@for $i from 1 to 51{
-	.w#{$i*10}{
-		width:#{$i*10}px !important;
+/* 너비 0px 부터 600px까지 (0px, 5px, 10px...)*/
+@for $i from 0 to 120{
+	.w#{$i*5}{
+		width:#{$i*5}px !important;
 	}
 }
 
