@@ -11,23 +11,17 @@ $(document).ready(function(){
 	});
 
 	/* BG IMAGE */
-	var body = $('.bgAction');
-	var backgrounds = new Array(
-		"url(../../_resource/images/common/bg_main01.jpg) no-repeat",
-		"url(../../_resource/images/common/bg_main02.jpg) no-repeat"
-	);
-	var current = 0;
-	 function nextBackground() {
-		body.fadeOut(1000);
-		body.css(
-			'background',
-			backgrounds[current = ++current % backgrounds.length]
-		);
-		body.fadeIn(1000);
-		setTimeout(nextBackground, 3000);
+	var nextBackground = function() {
+		$(".bgAction1").fadeIn(2000);
+		$(".bgAction2").fadeOut(2000);
+		setTimeout(prevBackground, 6000);
 	}
-	setTimeout(nextBackground, 3000);
-	body.css('background', backgrounds[0]);
+	var prevBackground = function() {
+		$(".bgAction1").fadeOut(2000);
+		$(".bgAction2").fadeIn(2000);
+		setTimeout(nextBackground, 6000);
+	}
+	setTimeout(nextBackground, 5000);
  
 	/* sub menu tab action */
 	$(".subLinkGroup a").on("mouseover", function(){
